@@ -6,6 +6,7 @@ class DeviseCreate<%= table_name.camelize.singularize %>Logins < ActiveRecord::M
       t.string :ip_address
       t.string :user_agent
       t.datetime :signed_in_at
+      t.datetime :last_seen_at
       t.datetime :signed_out_at
     end
 

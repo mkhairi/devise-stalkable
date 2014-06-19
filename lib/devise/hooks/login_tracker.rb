@@ -8,6 +8,14 @@ Warden::Manager.after_authentication do |record, warden, opts|
   end
 end
 
+Warden::Manager.after_set_user do |record, warden, opts|
+  if record.respond_to?(:mark_last_seen!)
+    scope = opts[:scope]
+    login_record_id = warden.session["#{scope}.login_id"]
+    record.mark_last_seen!(login_record_id) if login_record_id
+  end
+end
+
 Warden::Manager.before_logout do |record, warden, opts|
   if record.respond_to?(:mark_logout!)
     scope = opts[:scope]
