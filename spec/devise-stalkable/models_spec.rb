@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 class TestModel
-  include Devise::Models::LoginTracker
+  include Devise::Models::Stalkable
 
   def id
     1
@@ -11,7 +11,7 @@ end
 class TestModelLogin
 end
 
-describe Devise::Models::LoginTracker do
+describe Devise::Models::Stalkable do
 
   let(:model) { TestModel.new }
 
@@ -48,6 +48,7 @@ describe Devise::Models::LoginTracker do
       now = double
       allow(Time).to receive(:now).and_return now
       expect(record).to receive(:update_column).with(:signed_out_at, now)
+      expect(record).to receive(:update_column).with(:last_seen_at, now)
       model.mark_logout!(1)
     end
 

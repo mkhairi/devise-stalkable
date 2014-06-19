@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'devise/login_tracker/version'
+require 'devise/stalkable/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "devise-login_tracker"
-  spec.version       = Devise::LoginTracker::VERSION
-  spec.authors       = ["Jiří Zajpt"]
-  spec.email         = ["jzajpt@blueberry.cz"]
-  spec.description   = %q{Creates a record for each user login}
-  spec.summary       = %q{Creates a record for each user login}
+  spec.name          = "devise-stalkable"
+  spec.version       = Devise::Stalkable::VERSION
+  spec.authors       = ["Chris Cameron"]
+  spec.email         = ["unchris@outlook.com"]
+  spec.description   = %q{Tracks a user's login, logout, and requests}
+  spec.summary       = %q{Tracks a user's login, logout, and requests}
   spec.homepage      = ""
   spec.license       = "MIT"
 

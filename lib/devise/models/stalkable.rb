@@ -2,7 +2,7 @@ require 'active_support/inflector'
 
 module Devise
   module Models
-    module LoginTracker
+    module Stalkable
 
       # Creates a new login record based on information in provided request
       # object.

@@ -1,5 +1,5 @@
 module Devise
-  class LoginTracker
+  class Stalkable
     class Engine < ::Rails::Engine
     end
   end

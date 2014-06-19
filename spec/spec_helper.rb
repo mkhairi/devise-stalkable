@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'devise/login_tracker'
+require 'devise/stalkable'
 
 RSpec.configure do |config|
 end

@@ -1,12 +1,12 @@
-# Devise::LoginTracker
+# Devise::Stalkable
 
-LoginTracker is a gem that tracks logins of each user.
+Stalkable is a gem that tracks logins of each user. Based on [devise-login_tracker](https://github.com/blueberryapps/devise-login_tracker)
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (not on rubygems yet!):
 
-    gem 'devise-login_tracker'
+    gem 'devise-stalkable', github: "unchris/stalkable"
 
 And then execute:
 
@@ -14,20 +14,20 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install devise-login_tracker
+    $ gem install devise-stalkable
 
 ## Usage
 
 Run the generator with the model name (User in this example):
 
-    $ rails g devise_login_tracker User
+    $ rails g devise_stalkable User
 
-Add `:login_tracker` to `devise` in your model and association
+Add `:stalkable` to `devise` in your model and association
 to the login records. Example for User model:
 
 ```ruby
 class User < ActiveRecord::Base
-  devise :database_authenticatable, ..... , :login_tracker
+  devise :database_authenticatable, ..... , :stalkable
 
   has_many :logins, class_name: 'UserLogin'
 end
@@ -40,6 +40,7 @@ For each login new record is created with following attributes:
 * `ip_address` - IP address
 * `user_agent` - User agent
 * `signed_in_at` - Signed in at
+* `last_seen_at` - Last seen at (on new requests)
 * `signed_in_at` -  Signed out at (upon sign out)
 
 
@@ -53,5 +54,5 @@ For each login new record is created with following attributes:
 
 ## Copyright
 
-Copyright © 2013 Blueberry.cz Apps s.r.o. See LICENSE for details.
+Copyright © 2014 Chris Cameron. See LICENSE for details.
 

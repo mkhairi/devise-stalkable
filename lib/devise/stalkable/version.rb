@@ -1,5 +1,5 @@
 module Devise
-  module LoginTracker
+  module Stalkable
     VERSION = "0.0.1"
   end
 end
