@@ -4,9 +4,9 @@ Stalkable is a gem that tracks logins of each user. Based on [devise-login_track
 
 ## Installation
 
-Add this line to your application's Gemfile (not on rubygems yet!):
+Add this line to your application's Gemfile:
 
-    gem 'devise-stalkable', github: "unchris/stalkable"
+    gem 'devise-stalkable'
 
 And then execute:
 
@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :logins, class_name: 'UserLogin'
 end
 ```
+
+**Note: there is currently a bug in the YAML generation. Be sure to empty the users_login.yml file before running any tests**
 
 ## What is being tracked
 
