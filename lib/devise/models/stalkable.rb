@@ -39,7 +39,7 @@ module Devise
 
       def attrs_for_login(request)
         t = Time.now
-        { user_id: id, ip_address: request.remote_ip,
+        { "#{self.class.name.downcase}_id": id, ip_address: request.remote_ip,
           user_agent: request.user_agent,
           signed_in_at: t,
           last_seen_at: t }
